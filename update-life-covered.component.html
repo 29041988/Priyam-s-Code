@@ -1,0 +1,256 @@
+<ngb-accordion class="ngbasic-accordion">
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <h4 class="acc_header ngbasic-accordion-title">
+        <span>Retirement Annuity Savings Plan</span>
+        <span class="basic-accordion-title-arrow"></span>
+      </h4>
+    </ng-template>
+    <ng-template ngbPanelContent>
+
+      <div class="content-sapcing">
+        <div class="content-pading">
+          <div class="content_margin">
+            <p class="feature" value="">General Details</p>
+          </div>
+          <form #updatelifecoveredform="ngForm" class="form-padding">
+            <div class="row">
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="firstnamedata" ngModel></app-input-box>
+              </div>
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="surnamedata" ngModel></app-input-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <app-dropdown [inputdata]="idtypedata" ngModel></app-dropdown>
+              </div>
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="idnumberdata" ngModel></app-input-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <app-dropdown [inputdata]="countrydata" ngModel></app-dropdown>
+              </div>
+              <div class="form-group form-group--required col-sm-6">
+                <label>Date of birth</label>
+                <input type="text" class="form-control" placeholder="01/01/1988">
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-6">
+                <div class="col-sm-6">
+                  <app-segmented-controls [data]="genderdata" name="gender" ngDefaultControl [(ngModel)]="gender"></app-segmented-controls>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <app-dropdown [inputdata]="maritalstatus" ngModel></app-dropdown>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="col-sm-8">
+                  <app-segmented-controls [data]="smokerstatus" name="smoker" ngDefaultControl [(ngModel)]="smoker"></app-segmented-controls>
+                </div>
+              </div>
+              <div class="form-group col-sm-6">
+                  <app-dropdown [inputdata]="eduleveldata" ngModel></app-dropdown>
+              </div>
+            </div>
+            <div *ngIf="nqf == 'NQF_4'" class="hidden">
+              <div class="row edu-level-content">
+                <span class="edu-level-remove">
+                  <i class="icon icon-remove"></i>
+                </span>
+                <div class="form-group col-sm-11">
+                  <label>Professional member ship details</label>
+                  <input type="text" value="No matric" class="form-control" readonly>
+                </div>
+              </div>
+              <div class="row edu-level-content">
+                <span class="edu-level-remove">
+                  <i class="icon icon-remove"></i>
+                </span>
+                <div class="form-group col-sm-11">
+                  <label>Professional member ship details</label>
+                  <input type="text" value="Grade lower than 12" class="form-control" readonly>
+                </div>
+              </div>
+              <div class="row edu-level-content">
+                <span class="edu-level-remove">
+                  <i class="icon icon-remove"></i>
+                </span>
+                <div class="form-group col-sm-11">
+                  <label>Professional member ship details</label>
+                  <input type="text" value="Standard lower than 10" class="form-control" readonly>
+                </div>
+              </div>
+              <div class="row edu-level-content">
+                <span class="edu-level-remove">
+                  <i class="icon icon-remove"></i>
+                </span>
+                <div class="form-group col-sm-11">
+                  <label>Professional member ship details</label>
+                  <input type="text" value="National Certificate (Vocational) Level 2/3" class="form-control" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <label>Professional member ship details</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="content-pading">
+          <div class="content_margin">
+            <p class="feature" value="">Occupational and income details</p>
+          </div>
+          <form class="form-padding">
+            <div class="row">
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="prioccudata" ngModel></app-input-box>
+              </div>
+              <div class="col-sm-6">
+                <app-dropdown [inputdata]="prioccuindusdata" ngModel></app-dropdown>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <app-dropdown [inputdata]="empstatdata" ngModel></app-dropdown>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+        <div class="content-pading">
+          <div class="content_margin">
+          </div>
+          <span>Time spend doing tasks: Please enter the time in % adding up to 100%</span>
+          <form class="form-padding">
+
+            <div class="row">
+              <div class="form-group col-sm-4">
+                <label>Admin (%)</label>
+
+
+                <!-- <input type="text" class="form-control"> -->
+                <div class="row">
+                  <div class="btn-group col-sm-12">
+                    <button type="button" class="btn btn-size">-</button>
+                    <input type="text" class="form-control txt-box" placeholder="25">
+                    <button type="button" class="btn btn-size">+</button>
+                  </div>
+                </div>
+
+
+
+              </div>
+              <div class="form-group col-sm-4">
+                <label>Physical (%)</label>
+                <div class="row">
+                  <div class="btn-group col-sm-12">
+                    <button type="button" class="btn btn-size">-</button>
+                    <input type="text" class="form-control txt-box" placeholder="25">
+                    <button type="button" class="btn btn-size">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-4">
+                <label>Travelling (%)</label>
+                <div class="row">
+                  <div class="btn-group col-sm-12">
+                    <button type="button" class="btn btn-size">-</button>
+                    <input type="text" class="form-control txt-box" placeholder="25">
+                    <button type="button" class="btn btn-size">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="pgmsalarydata" ngModel></app-input-box>
+              </div>
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="pgmcomissiondata" ngModel></app-input-box>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="content-pading">
+          <div class="content_margin">
+          </div>
+          <form class="form-padding">
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <div class="ui-toggle">
+                  <label for="toggleId" class="col-sm-10">Do you also want to include business process and net assets?</label>
+                  <input type="checkbox" id="annuity_bus" class="cbx hidden" />
+                  <label for="annuity_bus" class="lbl toggle_label col-sm-2">
+                    <span class="toggle-options">YN</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <!-- <section id="toggles">                               -->
+                <div class="ui-toggle">
+                  <label for="toggleId" class="col-sm-10">Do you participate in more than 1 occupation?</label>
+                  <input type="checkbox" id="annuity_occ" class="cbx hidden" />
+                  <label for="annuity_occ" class="lbl toggle_label col-sm-2">
+                    <span class="toggle-options">YN</span>
+                  </label>
+                </div>
+                <!-- </section> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <div class="ui-toggle">
+                  <label for="toggleId" class="col-sm-10">Do you want to get a more accurate premium?</label>
+                  <input type="checkbox" id="annuity_pre" class="cbx hidden" />
+                  <label for="annuity_pre" class="lbl toggle_label col-sm-2">
+                    <span class="toggle-options">YN</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="content-pading">
+          <div class="content_margin">
+            <p class="feature" value="">Contact Information</p>
+          </div>
+          <form class="form-padding">
+            <div class="row">
+              <div class="col-sm-4">
+                <app-dropdown [inputdata]="phonetypedata" ngModel></app-dropdown>
+              </div>
+              <div class="col-sm-4">
+                <app-dropdown [inputdata]="countrycodedata" ngModel></app-dropdown>
+              </div>
+              <div class="col-sm-4">
+                <app-input-box [inputdata]="phonenodata" ngModel></app-input-box>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <app-input-box [inputdata]="emaildata" ngModel></app-input-box>
+              </div>
+            </div>
+            <span>* Indicates mandatory field</span>
+          </form>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

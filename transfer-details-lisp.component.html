@@ -1,0 +1,141 @@
+<ngb-accordion class="ngbasic-accordion">
+    <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <h4 class="acc_header ngbasic-accordion-title">
+              <span>Transfer Details LISP</span>
+              <span class="basic-accordion-title-arrow"></span>
+          </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="content-sapcing">
+                <!-- Inside accordion -->
+                
+                <label class="specifyfunheader-text">SPECIFY FUNDS FOR UNITS TO BE TRANSFERRED FROM:</label>
+      
+                <table class="table">
+                    <thead class="taxfree-tableborder fund-headerblock">
+                      <tr>
+                        <th class="fund-tableheadertxt">Fund Name</th>
+                        <th class="fund-tableheadertxt">Number of units to be transferred</th>
+                        <th class="fund-tableheadertxt">Estimated Rand Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="col-sm-6 form-group">       
+                          <input class="form-control text-input" id="searchfund" name="name" type="text" placeholder="Type Fund Name">
+                          <p  class="error-msg">Error Message</p>
+          
+                        </td>
+                        <td class="col-sm-3 form-group">
+                            <input class="form-control text-input" name="name" type="unit" placeholder="">
+                            <p  class="error-msg">Error Message</p>
+                        </td>
+                        <td class="col-sm-3 form-group">
+                            <input class="form-control text-input fund-estimatedblockbg" name="name" type="text" placeholder="R 400.0" readonly>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <!-- Row Header Sub-section starts-->
+                <!-- Button Section starts-->            
+                <div class="col-sm-12 content-para-styling">
+                    <button type="button" class="btn btn-primary">Add Fund</button>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-sm-6">
+                    <span class="transfer-cash">Would you like to transfer a cash amount as well?</span>            
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="ui-toggle">
+                        <input type="checkbox" id="cash_amount" #cash_amount (change)="0" class="cbx hidden" />
+                        <label for="cash_amount" class="lbl toggle_label toggle-shift">
+                          <span class="toggle-options">YN</span>
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div *ngIf="cash_amount.checked" class="d-flex justify-content-center">
+                    <div class="col-sm-2 col-sm-offset-4">
+                      <span>Transfer Amount</span>
+                    </div>
+                    <div class="col-sm-3">
+                      <input class="form-control text-input" name="name" type="text" placeholder="R">
+                    </div>
+                </div>      
+              </div>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
+<!-- 
+
+
+
+
+
+<div class="row"> 
+  <div class="basic-accordion col-sm-12" id="accordion">
+
+<div class="basic-accordion-container">
+    <h3 data-toggle="collapse" data-parent="#accordion" data-target="#collapse_transfer_details_LISP" class="basic-accordion-title">
+        <span>Transfer Details LISP</span>
+        <span class="basic-accordion-title-arrow"></span>
+    </h3>
+    <div id="collapse_transfer_details_LISP" class="collapse basic-accordion-content">
+        <div class="content-sapcing">
+          
+          <label class="specifyfunheader-text">SPECIFY FUNDS FOR UNITS TO BE TRANSFERRED FROM:</label>
+
+          <table class="table">
+              <thead class="fund-tableheadersection taxfree-tableborder fund-headerblock">
+                <tr>
+                  <th class="col-xs-6 fund-tableheadertxt">Fund Name</th>
+                  <th class="col-xs-3 fund-tableheadertxt">Number of units to be transferred</th>
+                  <th class="col-xs-3 fund-tableheadertxt">Estimated Rand Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-sm-6 form-group">       
+                    <input class="form-control text-input" id="searchfund" name="name" type="text" placeholder="Type Fund Name">
+                    <p  class="error-msg">Error Message</p>
+    
+                  </td>
+                  <td class="col-sm-3 form-group">
+                      <input class="form-control text-input" name="name" type="unit" placeholder="">
+                      <p  class="error-msg">Error Message</p>
+                  </td>
+                  <td class="col-sm-3 form-group">
+                      <input class="form-control text-input fund-estimatedblockbg" name="name" type="text" placeholder="R 400.0" readonly>
+                  </td>
+                </tr>
+              </tbody>
+            </table>         
+          <div class="col-sm-12 content-para-styling">
+              <button type="button" class="btn btn-primary">Add Fund</button>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <span class="transfer-cash">Would you like to transfer a cash amount as well?</span>            
+            </div>
+            <div class="col-sm-6">
+                <div class="ui-toggle">
+                  <input type="checkbox" id="cash_amount" class="cbx hidden" />
+                  <label for="cash_amount" class="lbl toggle_label toggle-shift"><span class="toggle-options">YN</span></label>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-2 col-sm-offset-4">
+                <span>Transfer Amount</span>
+              </div>
+              <div class="col-sm-3">
+                <input class="form-control text-input" name="name" type="text" placeholder="R">
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 
+</div> -->

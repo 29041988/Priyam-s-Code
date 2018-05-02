@@ -1,0 +1,135 @@
+<ng-container *ngIf="noLifeStagingData">
+<form>
+    <div class="row">
+        <div class="col-sm-12 form-group ">
+            <label>
+                {{noLifeStagingData.tabdata.title}}</label>
+            <div class="ui-segmented-controls investmentstrategy-controls">
+                <ng-container *ngFor="let tab of noLifeStagingData.tabdata.tabs">
+                    <input type="checkbox" name="{{tab.id}}" id="{{tab.id}}">
+                    <label for="{{tab.id}}">{{tab.text}}</label>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group ">
+            <label for="searchfund">
+                    Available funds as per selected Investment strategy</label>
+            <input type="text" class="form-control" id="searchfund" placeholder="Search Fund">
+        </div>
+    </div>
+</form>
+<div class="table-responsive">
+    <table class="table nolifestaging-table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Fund Name </th>
+               <th> 
+                      <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+
+                        <!-- <button class="btn btn-outline-primary" id="dropdownManual" ngbDropdownToggle></button> -->
+                        Fund Category <button class="handbutton"><i class="icon icon-filter" ngbDropdownToggle></i></button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="fundcategoryborder">
+                        <div class="fundcategorytext"><input type="checkbox">Multi-Managed</div>
+                        <div class="fundcategorytext"><input type="checkbox">Passive</div>
+        
+                        <div class="fundcategorytext"><input type="checkbox">Protection</div>
+                        <div class="fundcategorytext"><input type="checkbox">Target</div>
+                        <div class="fundcategorytextExtendedRange"><input type="checkbox">Extended Range</div>
+                        </div>
+                      
+                        
+                      </div>
+                    
+                    </th>
+                <th scope="col">Asset management fee</th>
+                <!--<th scope="col">Investment Strategy <img src="https://d2v8ggac1o0f6z.cloudfront.net/gsc/KWUIEB/32/74/ea/3274ea9004434cfea35639d67232d899/images/sq_7_1_1__investment_funds_selection/u7104.png?token=990ac5a6e272ffe8381e4e04345e0668" alt="filter image"></th> -->
+                <th> 
+                    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                      <!-- <button class="btn btn-outline-primary" id="dropdownManual" ngbDropdownToggle></button> -->
+                      Investment Strategy <button class="handbutton"><i class="icon icon-filter" ngbDropdownToggle></i></button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownManual" class="fundcategoryborder">
+                      <div class="fundcategorytext"><input type="checkbox">Enhanced Income</div>
+                      <div class="fundcategorytext"><input type="checkbox">Inflation plus 2-3%</div>
+      
+                      <div class="fundcategorytext"><input type="checkbox">Inflation plus 3-4%</div>
+                      <div class="fundcategorytext"><input type="checkbox">Inflation plus 4-5%</div>
+                      <div class="fundcategorytext"><input type="checkbox">Inflation plus 5-7%</div>
+                      <div class="fundcategorytext"><input type="checkbox">Maximum Return</div>
+                      <div class="fundcategorytextcash"><input type="checkbox">Cash</div>
+                      </div>
+                    
+                      
+                    </div>
+                  
+                  </th>
+                
+                
+                <th scope="col">Fund Fact Sheet</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trow of noLifeStagingData.tabledata">
+                <td>
+                    <!-- <div class="checkbox">
+                    <input type="checkbox" id="{{trow.fundid}}">
+                    <label for="{{trow.fundid}}" class="checkbox-material">
+                        <span class="check"></span>
+                    </label>
+                  </div> -->
+
+
+                  <div class="form-group checkbox">
+                        <input class="form-control" type="checkbox" id="{{trow.fundid}}">
+                        <label class="check-label" for="{{trow.fundid}}"></label> 
+                     </div>
+              </td>
+                <td>{{trow.fname}}</td>
+                <td>{{trow.fcat}}</td>
+                <td>{{trow.amf}}</td>
+                <td>{{trow.inv}}</td>
+                <td class="center">
+                    <a href="{{trow.downloadlink}}" download class="download-link">
+                  <i class="investment-download icon-download"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--Pagination start-->
+<ul class="float-right common-pagination">
+        <li class="common-pagination-arrow common-pagination-prev">
+          <button>
+            <i class="icon-prev"></i>PREVIOUS
+          </button>
+        </li>
+        <li class="common-pagination-page common-pagination-page-active" (click)="hightlightPage=!hightlightPage" 
+        [class.common-pagination-page-active]="hightlightPage">
+          <button>1</button>
+        </li>
+        <li class="common-pagination-page">
+          <button>2</button>
+        </li>
+        <li class="common-pagination-page">
+          <button>3</button>
+        </li>
+        <li class="common-pagination-page">
+          <button>4</button>
+        </li>
+        <li class="common-pagination-page">
+          <button>5</button>
+        </li>
+        <li class="common-pagination-arrow common-pagination-next">
+          <button>NEXT
+            <i class="icon-next"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+      <!--Pagination end-->
+      
+    </ng-container>

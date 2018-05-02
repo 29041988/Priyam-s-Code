@@ -1,0 +1,185 @@
+@import '../../../snitheme/less/0-elements/_elements-base';
+@import '../../../snitheme/less/1-global/_global-base';
+
+.investmentstrategy-controls{
+    width: 100%;
+    background-color: #f1f2f5;
+    overflow: hidden;
+    display: table;
+    table-layout: fixed;
+    label{
+       // width: 12.5%;
+        padding: 15px 5px;
+        display: table-cell;
+        vertical-align: middle;
+    &:not(:first-of-type){
+        margin-left:0;
+    }
+    }
+    input:checked + label {
+        border-color: #f1f2f5;
+    }
+}
+#searchfund{
+    //border: none;
+    //border-bottom: 1px solid @future-green;
+    //border-radius: 0;
+    background-position: 99% 8px;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/images/icons/icon-search.svg);
+    background-size: 20px;
+    padding-right: 30px;
+}
+.download-link{
+    //position: relative;
+    //text-decoration: none;
+    height: 40px;
+    width: 32px;
+    display: inline-block;
+    // &:before{
+    //     display: none;
+    //     content: "Fund Fact Sheet";
+    //     position: absolute;
+    //     padding: 10px;
+    //     border-radius: 9px;
+    //     background-color: rgba(0,0,0, 0.8);
+    //     color: #fff;
+    //     width: 125px;
+    //     right: -50px;
+    //     top: -50px;
+    //     z-index: 3;
+    // }
+    // &:after{
+    //     display: none;
+    //     content: "";
+    //     width: 0; 
+    //     height: 0; 
+    //     border-left: 8px solid transparent;
+    //     border-right: 8px solid transparent;
+    //     border-top: 8px solid rgba(0, 0, 0, 0.8);
+    //     position: absolute;
+    //     right: 7px;
+    //     top: -10px;
+    //     z-index: 3;
+    // }
+    // &:hover:before, &:hover:after{
+    //     display: inline-block;
+    // }
+.investment-download{
+    height: 40px;
+    width: 32px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin: 0px auto;
+}
+}
+.nolifestaging-table{
+    th, td{
+        vertical-align: middle;
+        span{
+            float: right;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.show {display:block;}
+
+
+.fundcategoryborder{
+    
+    border-style: solid;
+   // border-color: gray; 
+   
+    z-index: 0;
+
+    
+    /*border-color: inherit;*/
+}
+.fundcategorytext{
+    width: 90%;
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    /*border-bottom-style: solid;
+    border-color: lightgrey;*/
+    
+}
+.fundcategorytextExtendedRange{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.fundcategorytextcash{
+    margin-top: 10px;
+    margin-left: 15px;
+
+}
+
+.icon-filter{
+    height: 14px;
+    width: 13px;
+
+}
+
+.dropdown-toggle:empty::after {
+    //margin-left: 0;
+    display: none;
+}
+
+.handbutton{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+
+.checkbox[_ngcontent-c4] .check-label[_ngcontent-c4]::before {
+    background-color: lightgray;
+    width: 14px;
+    height: 14px;
+    top: 6px;
+    border-radius: 3px;
+    border: 1px solid #bec0c2;
+}
+
+.checkbox[_ngcontent-c4] .form-control[type=checkbox][_ngcontent-c4]:checked + .check-label[_ngcontent-c4]::after {
+    width: 14px;
+    height: 14px;
+    top: 6px;
+    border-radius: 3px; 
+}
+.checkbox[_ngcontent-c4] .form-control[type=checkbox][_ngcontent-c4]:checked + .check-label[_ngcontent-c4]::before {
+    width: 14px;
+    height: 14px;
+    top: 6px;
+    border-radius: 3px;
+    border: 1px solid #6eab24;
+}
+
+
+

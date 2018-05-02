@@ -1,0 +1,155 @@
+ 
+ <ngb-accordion class="ngbasic-accordion paymentselection " id="paymentselection">
+  <ngb-panel *ngFor="let data of model; let i = index">
+    <ng-template ngbPanelTitle>
+      <h4 class="acc_header ngbasic-accordion-title">
+        <span>{{data.name}}</span>
+        <span class="basic-accordion-title-arrow"></span>
+      </h4>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="payment-selection-content" *ngFor="let section of data.section; let k = index">
+        <div>
+          <p class="text">{{section.head}}</p>
+        </div>
+ <!-- comment while using common component -->
+ <!-- <div class="payment-selection-padding" *ngFor="let body of section.body;               let sub = index">
+          <div class="payment-selection-padding">
+            <div class="form-group checkbox">
+
+              <input class="form-control" type="checkbox" [attr.id]="'check_' + i +'_'+ sub">
+              <label class="check-label" [attr.for]="'check_' + i +'_'+ sub">{{body.text}}</label>
+
+</div>  --> <!-- end comment -->
+
+<!-- uncomment to use with common component -->
+            <div class="payment-selection-padding">
+          <div class="payment-selection-padding">
+            <div class="form-group checkbox roundcheck check">
+              <app-multi-checkbox name="checkNBoxParent" [data]="checkboxes[i]"  ngDefaultControl ngModel></app-multi-checkbox>
+            </div>
+          </div>
+        </div>
+
+<!-- end  -->
+
+
+
+             <!-- <div class="form-group checkbox">
+                        <label *ngIf="data.label">{{data.label}}</label>
+                        <ng-container *ngFor="let each of data.values">
+                          <input class="form-control" type="checkbox" id="{{each.id}}" (change)="onChange(each.id,$event.target.checked)" />
+                          <label class="check-label" for="{{each.id}}">{{each.title}}</label>
+                        </ng-container>
+                      </div> -->
+
+
+
+
+            <!-- <div class="form-group checkbox">
+                      <input class="form-control" type="checkbox"  id="checkbox_lump_sav">
+                      <label class="check-label" for="checkbox_lump_sav">Lump Sum Contribution</label>
+                    </div>
+                    <div class="form-group checkbox">
+                      <input class="form-control" type="checkbox"  id="checkbox_trans_sav">
+                      <label class="check-label" for="checkbox_trans_sav">Transfer from another provider</label>
+                    </div> -->
+
+                    <!-- comment while using common component -->
+        <!-- </div>  -->
+            <!-- </div> 
+        </div>  -->
+         <!-- end comment -->
+      </div>
+    </ng-template>
+  </ngb-panel>
+  <!-- <ngb-panel>
+      <ng-template ngbPanelTitle >
+      <h4 class="acc_header ngbasic-accordion-title">
+          <span>Retirement Annuity Investement Plan</span>
+          <span class="basic-accordion-title-arrow"></span>
+      </h4>
+      </ng-template>
+      <ng-template ngbPanelContent>
+          <div class="payment-selection-content">
+              <div>
+                <p >Choose your payment type</p>
+              </div>
+              <div class="payment-selection-padding">
+                <div class="form-group checkbox">
+                  <input class="form-control" type="checkbox"  id="checkbox_reg_inv">
+                  <label class="check-label" for="checkbox_reg_inv">Regular Contribution</label>
+                </div>
+                <div class="form-group checkbox">
+                  <input class="form-control" type="checkbox"  id="checkbox_lump_inv">
+                  <label class="check-label" for="checkbox_lump_inv">Lump Sum Contribution</label>
+                </div>
+                <div class="form-group checkbox">
+                  <input class="form-control" type="checkbox"  id="checkbox_trans_inv">
+                  <label class="check-label" for="checkbox_trans_inv">Transfer from another provider</label>
+                </div>
+              </div>
+          </div>
+      </ng-template> -->
+  <!-- </ngb-panel>  -->
+</ngb-accordion>
+
+<!-- <div class="row">
+  <div class="basic-accordion col-sm-12" id="accordion">
+      <div class="basic-accordion-container">
+          <h3 data-toggle="collapse" data-parent="#accordion" data-target="#collapse_savings" class="basic-accordion-title">
+              <span>Retirement Annuity Savings Plan</span>
+              <span class="basic-accordion-title-arrow"></span>
+          </h3>
+          <div id="collapse_savings" class="collapse basic-accordion-content">
+                <div class="row payment-selection-content">
+                      <div>
+                        <p >Choose your payment type</p>
+                      </div>
+    
+                      <div class="payment-selection-padding">
+                            <div class="form-group checkbox">
+                              <input class="form-control" type="checkbox"  id="checkbox_reg_sav">
+                              <label class="check-label" for="checkbox_reg_sav">Regular Contribution</label>
+                            </div>
+                            <div class="form-group checkbox">
+                              <input class="form-control" type="checkbox"  id="checkbox_lump_sav">
+                              <label class="check-label" for="checkbox_lump_sav">Lump Sum Contribution</label>
+                            </div>
+                            <div class="form-group checkbox">
+                              <input class="form-control" type="checkbox"  id="checkbox_trans_sav">
+                              <label class="check-label" for="checkbox_trans_sav">Transfer from another provider</label>
+                            </div>
+                          </div>
+                    </div>
+              </div>
+        </div>
+        <div class="basic-accordion-container">
+              <h3 data-toggle="collapse" data-parent="#accordion" data-target="#collapse_invest" class="basic-accordion-title">
+                  <span>Retirement Annuity Investement Plan</span>
+                  <span class="basic-accordion-title-arrow"></span>
+              </h3>
+              <div id="collapse_invest" class="collapse basic-accordion-content">
+                    <div class="row payment-selection-content">
+                          <div>
+                            <p >Choose your payment type</p>
+                          </div>
+                          <div class="payment-selection-padding">
+                            <div class="form-group checkbox">
+                              <input class="form-control" type="checkbox"  id="checkbox_reg_inv">
+                              <label class="check-label" for="checkbox_reg_inv">Regular Contribution</label>
+                            </div>
+                            <div class="form-group checkbox">
+                              <input class="form-control" type="checkbox"  id="checkbox_lump_inv">
+                              <label class="check-label" for="checkbox_lump_inv">Lump Sum Contribution</label>
+                            </div>
+                            <div class="form-group checkbox">
+                              <input class="form-control" type="checkbox"  id="checkbox_trans_inv">
+                              <label class="check-label" for="checkbox_trans_inv">Transfer from another provider</label>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+               </div>
+      </div>
+  </div> -->

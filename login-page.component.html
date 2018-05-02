@@ -1,0 +1,213 @@
+<ngb-accordion class="ngbasic-accordion" [closeOthers]="true" class="ngbasic-accordion" activeIds="fundAccordion"> 
+    <ngb-panel id="fundAccordion">
+        <ng-template ngbPanelTitle>
+          <h4 class="acc_header ngbasic-accordion-title">
+              <span>Login Details</span>
+              <span class="basic-accordion-title-arrow"></span>
+          </h4>
+        </ng-template>
+        <ng-template ngbPanelContent >
+            <div class="content-sapcing">
+                <form >
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label for="goalname">User Code*</label>
+                            <input type="text" class="form-control" id="goalname">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="goaltype">Digital Id*</label>
+                            <select class="form-control" id="goaltype">
+                                <option value="Retirement">45845463</option>
+                                <option value="Education">5454544</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 quote--content-item_footer quote--content-item">
+                        <div class="col-md-4 col-sm-4 quote--select-benefits_moday-footer reflexive-search-btn pull-right">
+                          <!-- <a id="loginButton" class="btn btn-primary pull-right" routerLink="/lob">Login</a> -->
+                          <button id="loginButton" class="btn btn-primary pull-right" routerLink="/lob">Login</button>
+
+                        </div>
+                      </div>* Fields marked are mandatory
+                    </div>
+                </form>
+            </div>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
+
+
+<!-- <div class="row">
+  <div class="basic-accordion col-sm-12" id="goalaccordion">
+      <div class="basic-accordion-container">
+          <h3 data-toggle="collapse" data-parent="#goalaccordion" data-target="#goalcollapse1" class="basic-accordion-title">
+              <span class="goal-accordion-title-close">
+                  <i class="icon icon-remove"></i>
+              </span>
+              Login details
+              <span class="basic-accordion-title-arrow"></span>
+          </h3>
+          <div id="goalcollapse1" class="collapse in basic-accordion-content goal-accordion-form">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <form>
+                          <div class="row">
+                              <div class="form-group col-sm-6">
+                                  <label for="goalname">User Code*</label>
+                                  <input type="text" class="form-control" id="goalname">
+                              </div>
+                              <div class="form-group col-sm-6">
+                                  <label for="goaltype">Digital Id*</label>
+                                  <select class="form-control" id="goaltype">
+                                      <option value="Retirement">45845463</option>
+                                      <option value="Education">5454544</option>
+                                  </select>
+                              </div>
+                          </div>
+                          
+                          
+
+                          
+
+                          
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 quote--content-item_footer quote--content-item">
+                              <div class="col-md-4 col-sm-4 quote--select-benefits_moday-footer reflexive-search-btn pull-right">
+                                <a id="loginButton" class="btn btn-primary pull-right" href="/lob">Login</a>
+                              </div>
+                            </div>* Fields marked are mandatory
+
+                          </div>
+
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+
+
+
+
+      <!-- <div class="basic-accordion-container">
+          <h3 data-toggle="collapse" data-parent="#goalaccordion" data-target="#goalcollapse2" class="basic-accordion-title collapsed">
+              <span class="goal-accordion-title-close">
+                  <i class="icon icon-remove"></i>
+              </span>
+              Retirement Annuity Investment Plan
+              <span class="basic-accordion-title-arrow"></span>
+          </h3>
+          <div id="goalcollapse2" class="collapse basic-accordion-content goal-accordion-form">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <p>Assign Goal:</p>
+                      <form>
+                          <div class="row">
+                              <div class="form-group col-sm-6">
+                                  <label for="goalname">Personalized Goal Name</label>
+                                  <input type="text" class="form-control" id="goalname">
+                              </div>
+                              <div class="form-group col-sm-6">
+                                  <label for="goaltype">Goal Type</label>
+                                  <select class="form-control" id="goaltype">
+                                      <option value="Retirement">Retirement</option>
+                                      <option value="Education">Education</option>
+                                      <option value="General">General</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="row">
+
+                              <div class="form-group col-sm-6">
+                                  <label for="amount">Goal Amount</label>
+                                  <input id="datepicker" class="form-control" data-date-format="mm/dd/yyyy">
+                              </div>
+                              <div class="form-group  col-sm-6">
+                                  <label>Goal Term</label>
+                                  <div class="row">
+                                      <div class="col-sm-6">
+
+                                          <div class="ui-segmented-controls">
+                                              <input type="radio"  #years name="term" id="years1" value="Year(s)" (change)="0" checked>
+                                              <label for="years1">Year(s)</label>
+                                              <input type="radio" #months name="term" id="months1" value="Months" (change)="0">
+                                              <label for="months1">Months</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6">
+                                          <div class="row">
+                                              <div class="col-xs-10">
+                                                  <input type="text"  class="form-control">
+                                              </div>
+                                              <div class="col-xs-2 term-box">
+                                                  <span *ngIf="years.checked">Year(s)</span>
+                                                  <span *ngIf="months.checked">Months</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="form-group  col-sm-6">
+                                  <label for="cterm">Commitment term (Years)</label>
+                                  <input type="text"  class="form-control" id="cterm">
+                              </div>
+                              <div class="form-group  col-sm-6">
+                                  <label for="age">Current age</label>
+                                  <input type="text"  class="form-control" id="age">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-group  col-sm-6">
+                                  <label for="rage">Expected Retirement Age (Yrs.)</label>
+                                  <input type="text"  class="form-control" id="rage">
+                              </div>
+
+                          </div>
+
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

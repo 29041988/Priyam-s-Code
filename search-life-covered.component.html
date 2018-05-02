@@ -1,0 +1,78 @@
+ <div class="basic-tab content-card">
+                    <h4 class="basic-tab-heading content-card--header">Who is the life covered person?</h4>
+                    <ngb-tabset [justify]=justified>
+                      <ngb-tab>
+                        <ng-template ngbTabTitle> 
+                          <span class="basic-tab-icon">
+                            <i class="icon icon-search"></i>
+                          </span>
+                          <span class="basic-tab-text">SEARCH LIFE COVERED</span>
+                        </ng-template>
+                        <ng-template ngbTabContent>
+                          <form>
+                    <div class="row">
+                      <div class="form-group  form-group--required col-sm-6">
+                        <label for="fname">First Name</label>
+                        <input type="text"  class="form-control" id="fname" required>
+                        <p class="error">Error Message</p>
+                      </div>
+
+                      <div class="form-group  form-group--required col-sm-6">
+                          <label for="sname">Surname</label>
+                          <input type="text" class="form-control" id="sname" required>
+                          <p class="error">Error Message</p>
+                        </div>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-sm-6 ">
+                        <label for="idtype">Id type</label>
+                        <select class="form-control" id="idtype">
+                          <option value="Choose Id Type">Choose Id Type</option>
+                          <option value="National Id">National Id</option>
+                          <p class="error">Error Message</p>
+                          
+                        </select>
+                      </div>
+                      <div class="form-group col-sm-6 ">
+                        <label for="countryofissue">Country of Issue</label>
+                        <select class="form-control" id="countryofissue">
+                            <option value="Choose">Choose</option>
+                          <option value="Namibia">Namibia</option>
+                          <option value="South Africa">South Africa</option>
+                          <p class="error">Error Message</p>
+      
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group  col-sm-6">
+                            <label for="idnum">ID Number</label>
+                            <input type="text" class="form-control" id="idnum">
+                            <p class="error">Error Message</p>
+                          </div>
+      
+                      <div class="form-group  form-group--required col-sm-6">
+                        <label for="dob">Date of Birth</label>
+                        <input id="dob"  class="form-control" data-date-format="mm/dd/yyyy" placeholder="01/01/1999"required>
+                        <p class="error">Error Message</p>
+                      </div>
+                      
+                    </div>
+
+                    <div class="form-group col-sm-10">
+                       <span class="mandatory-text">* Indicates mandatory fields</span>
+                    </div>
+                       <div class="form-group col-sm-2">
+                          <button class="btn btn-primary btn-primary-small">SEARCH</button>
+                        </div>
+                      
+      
+                  </form>
+            </ng-template>
+           </ngb-tab>
+           </ngb-tabset>
+          </div>
+          
+            

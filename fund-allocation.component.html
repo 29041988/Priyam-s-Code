@@ -1,0 +1,524 @@
+<ngb-accordion [closeOthers]="true" class="ngbasic-accordion" activeIds="fundAllocation">
+    <ngb-panel id="fundAllocation">
+        <ng-template ngbPanelTitle>
+            <h4 class="acc_header ngbasic-accordion-title">
+                <span>Assign investment allocation</span>
+                <span class="basic-accordion-title-arrow"></span>
+            </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <form #investForm="ngForm">
+                <div class="investment-main-div">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table investment-table table-bordered">
+                                <thead>
+
+                                    <tr class="background-gray">
+                                        <th scope="col" class="fund-name-head">Fund Name</th>
+                                        <th scope="col" class="investment-strategy-head">Investment Strategy</th>
+                                        <th scope="col" class="center">Transfer</th>
+                                        <th scope="col" class="center">Regular
+                                            <br>
+                                            <div class="ui-segmented-controls fund-alloc-segement">
+                                                <input type="radio" name="reg" #percent (change)="0" id="percent" checked>
+                                                <label for="percent">%</label>
+                                                <input type="radio" name="reg" #rand id="rand" (change)="0">
+                                                <label for="rand">R</label>
+                                            </div>
+                                        </th>
+                                        <th scope="col" class="center">Lumpsum
+                                            <br>
+                                            <div class="ui-segmented-controls fund-alloc-segement">
+                                                <input type="radio" name="lumpsum" #percent1 (change)="0" id="percent1" checked>
+                                                <label for="percent1">%</label>
+                                                <input type="radio" name="lumpsum" #rand1 (change)="0" id="rand1">
+                                                <label for="rand1">R</label>
+                                            </div>
+                                        </th>
+                                    </tr>
+
+
+                                </thead>
+                                    <tbody>
+                                     <tr class="row-background-light-gray">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><img id="u8104_img" class="iconclass" src="https://d2t44wh9rnwl5y.cloudfront.net/gsc/KWUIEB/77/8e/50/778e503b0a52485f8903b318fad0f8c8/images/sq_7_1_1__funds_allocation-nolifestaging/u8104.png?token=503111508f6cf9976d8c3df9d80709bc"></td>
+                                                    <td><img id="u8104_img" class="iconclass" src="https://d2t44wh9rnwl5y.cloudfront.net/gsc/KWUIEB/77/8e/50/778e503b0a52485f8903b318fad0f8c8/images/sq_7_1_1__funds_allocation-nolifestaging/u8104.png?token=503111508f6cf9976d8c3df9d80709bc"></td>
+                                                    <td><img id="u8104_img" class="iconclass" src="https://d2t44wh9rnwl5y.cloudfront.net/gsc/KWUIEB/77/8e/50/778e503b0a52485f8903b318fad0f8c8/images/sq_7_1_1__funds_allocation-nolifestaging/u8104.png?token=503111508f6cf9976d8c3df9d80709bc"></td>
+                                     </tr>
+                                     <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <div class="row">
+                                                <div class="col-sm-10">
+                                                    <span class="justifytext">DUMMY FUNDS-XYZ-01</span>
+                                                </div>
+                                                <div class="col-sm-2">
+
+                                                    <span class="investment-download ">
+                                                        <i class="icon-download icon"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{transdata1.inputid}}" class="allocation-amt" [inputdata]="transdata1" ngModel></app-input-box>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div *ngIf="!rand.checked && percent.checked"class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{regulardata1.inputid}}" class="allocation-amt" [inputdata]="regulardata1" ngModel></app-input-box>
+                                                </div>
+                                                <div *ngIf="rand.checked && !percent.checked" class="fund_textbox">
+                                                   <app-input-box name="textBoxParent_{{regulardata1r.inputid}}" class="allocation-amt" [inputdata]="regulardata1r" ngModel></app-input-box>
+                                                    <span class="currclass">R</span>
+                                                </div>                                       
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div *ngIf="!rand1.checked && percent1.checked"class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{lumpsumdata1.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata1" ngModel></app-input-box>
+                                                </div>
+                                                <div *ngIf="rand1.checked && !percent1.checked" class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{lumpsumdata1r.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata1r" ngModel></app-input-box>
+                                                    <span class="currclass">R</span>
+                                                </div>
+                                                    
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <div class="row">
+                                                <div class="col-sm-10">
+                                                    <span class="justifytext">DUMMY FUNDS-XYZ-02</span>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <span class="investment-download ">
+                                                        <i class="icon-download icon"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <td>
+                                                Inflation Plus 2-3
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <div class="fund_textbox">
+                                                        <app-input-box name="textBoxParent_{{transdata2.inputid}}" class="allocation-amt" [inputdata]="transdata2" ngModel></app-input-box>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <div *ngIf="!rand.checked && percent.checked"class="fund_textbox">
+                                                        <app-input-box name="textBoxParent_{{regulardata2.inputid}}" class="allocation-amt" [inputdata]="regulardata2" ngModel></app-input-box>
+                                                    </div>
+                                                    <div *ngIf="rand.checked && !percent.checked" class="fund_textbox">
+                                                        <app-input-box name="textBoxParent_{{regulardata2r.inputid}}" class="allocation-amt" [inputdata]="regulardata2r" ngModel></app-input-box>
+                                                        <span class="currclass">R</span>
+                                                    </div> 
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <div *ngIf="!rand1.checked && percent1.checked"class="fund_textbox">
+                                                        <app-input-box name="textBoxParent_{{lumpsumdata2.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata2" ngModel></app-input-box>
+                                                    </div>
+                                                    <div *ngIf="rand1.checked && !percent1.checked" class="fund_textbox">
+                                                        <app-input-box name="textBoxParent_{{lumpsumdata2r.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata2r" ngModel></app-input-box>
+                                                        <span class="currclass">R</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <div class="row">
+                                                <div class="col-sm-10">
+                                                    <span class="justifytext">DUMMY FUNDS-XYZ-03</span>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <span class="investment-download ">
+                                                        <i class="icon-download icon"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{transdata3.inputid}}" class="allocation-amt" [inputdata]="transdata3" ngModel></app-input-box>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div *ngIf="!rand.checked && percent.checked"class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{regulardata3.inputid}}" class="allocation-amt" [inputdata]="regulardata3" ngModel></app-input-box>
+                                                </div>
+                                                <div *ngIf="rand.checked && !percent.checked" class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{regulardata3r.inputid}}" class="allocation-amt" [inputdata]="regulardata3r" ngModel></app-input-box>
+                                                    <span class="currclass">R</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div *ngIf="!rand1.checked && percent1.checked"class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{lumpsumdata3.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata3" ngModel></app-input-box>
+                                                </div>
+                                                <div *ngIf="rand1.checked && !percent1.checked" class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{lumpsumdata3r.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata3r" ngModel></app-input-box>
+                                                    <span class="currclass">R</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <div class="row">
+                                                <div class="col-sm-10">
+                                                    <span class="justifytext">DUMMY FUNDS-XYZ-04</span>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <span class="investment-download ">
+                                                        <i class="icon-download icon"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{transdata4.inputid}}" class="allocation-amt" [inputdata]="transdata4" ngModel></app-input-box>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div *ngIf="!rand.checked && percent.checked"class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{regulardata4.inputid}}" class="allocation-amt" [inputdata]="regulardata4" ngModel></app-input-box>
+                                                </div>
+                                                <div *ngIf="rand.checked && !percent.checked" class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{regulardata4r.inputid}}" class="allocation-amt" [inputdata]="regulardata4r" ngModel></app-input-box>
+                                                    <span class="currclass">R</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div *ngIf="!rand1.checked && percent1.checked"class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{lumpsumdata4.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata4" ngModel></app-input-box>
+                                                </div>
+                                                <div *ngIf="rand1.checked && !percent1.checked" class="fund_textbox">
+                                                    <app-input-box name="textBoxParent_{{lumpsumdata4r.inputid}}" class="allocation-amt" [inputdata]="lumpsumdata4r" ngModel></app-input-box>
+                                                    <span class="currclass">R</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="add-fund-row">
+                                        <td>
+                                            <span class="add-fund-icon">
+                                                <i class="icon icon-plus"></i>
+                                            </span>
+                                            <span class="investment-plus-icon">Add Fund</span>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="row-background-light-gray">
+                                        <td class="investment-row-position">Total Allocation</td>
+                                        <td></td>
+                                        <td class="investment-row-position row-content">100%</td>
+                                        <td class="investment-row-position row-content">100%</td>
+                                        <td class="investment-row-position row-content">100%</td>
+                                    </tr>
+                                    <tr class="row-background-dark-gray">
+                                        <td class="investment-row-position">Total Investment</td>
+                                        <td></td>
+                                        <td class="investment-row-position row-content">R 10,000</td>
+                                        <td class="investment-row-position row-content">R 20,000</td>
+                                        <td class="investment-row-position row-content">R 15,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="form-group col-sm-6 ">
+                            <label>Fund Name</label>
+                            <p class="form-control-static form-group">Old Mutual Absolute Growth Portfolio</p>
+                        </div>
+                        <div class="col-sm-6 ">
+                            <app-datepicker-popup [inputdata]="dob" [(date)]="programDate"></app-datepicker-popup>
+                        </div>
+                    </div>
+                </form>
+            </form>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
+
+
+
+<!-- <div class="row">
+    <div class="basic-accordion col-sm-12" id="accordion">
+        <div class="basic-accordion-container">
+            <h3 data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" class="basic-accordion-title">
+                Assign investment allocation
+                <span class="basic-accordion-title-arrow"></span>
+            </h3>
+            <div id="collapse3" class="collapse in basic-accordion-content">
+
+                <div class="investment-main-div">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table investment-table table-bordered">
+                                <thead>
+
+                                    <tr class="background-gray">
+                                        <th scope="col" class="">Fund Name</th>
+                                        <th scope="col">Investment Strategy</th>
+                                        <th scope="col" class="center">Transfer</th>
+                                        <th scope="col" class="center">Regular
+                                            <br>
+                                            <div class="ui-segmented-controls fund-alloc-segement">
+                                                <input type="radio" name="reg" id="percent" checked>
+                                                <label for="percent">%</label>
+                                                <input type="radio" name="reg" id="rand">
+                                                <label for="rand">R</label>
+                                            </div>
+                                        </th>
+                                        <th scope="col" class="center">Lumpsum
+                                            <br>
+                                            <div class="ui-segmented-controls fund-alloc-segement">
+                                                <input type="radio" name="lumpsum" id="percent1" checked>
+                                                <label for="percent1">%</label>
+                                                <input type="radio" name="lumpsum" id="rand1">
+                                                <label for="rand1">R</label>
+                                            </div>
+                                        </th>
+                                    </tr>
+
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <span>DUMMY FUNDS-XYZ-01</span>
+                                            <span class="investment-download ">
+                                                <i class="icon-download icon"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <span> DUMMY FUNDS-XYZ-02</span>
+                                            <span class="investment-download ">
+                                                <i class="icon-download icon"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <span>DUMMY FUNDS-XYZ-03</span>
+                                            <span class="investment-download ">
+                                                <i class="icon-download icon"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="fund-allocation-close">
+                                                <i class="icon icon-remove"></i>
+                                            </span>
+                                            <span>DUMMY FUNDS-XYZ-04</span>
+                                            <span class="investment-download ">
+                                                <i class="icon-download icon"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Inflation Plus 2-3
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" id="invest-name" name="invest-name" class="form-control fund_textbox" placeholder="6.00%">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="add-fund-row">
+                                        <td>
+                                            <span class="add-fund-icon">
+                                                <i class="icon icon-plus"></i>
+                                            </span>
+                                            <span class="investment-plus-icon">Add Fund</span>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="row-background-light-gray">
+                                        <td class="investment-row-position">Total Allocation</td>
+                                        <td></td>
+                                        <td class="investment-row-position">100%</td>
+                                        <td class="investment-row-position">100%</td>
+                                        <td class="investment-row-position">100%</td>
+                                    </tr>
+                                    <tr class="row-background-dark-gray">
+                                        <td class="investment-row-position">Total Investment</td>
+                                        <td></td>
+                                        <td class="investment-row-position">R 10,000</td>
+                                        <td class="investment-row-position">R 20,000</td>
+                                        <td class="investment-row-position">R 15,000</td>
+                                    </tr>
+
+
+
+                                </tbody>
+
+
+
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="form-group col-sm-6 ">
+                            <label>Fund Name</label>
+                            <p class="form-control-static">Old Mutual Absolute Growth Portfolio</p>
+                        </div>
+                        <div class="form-group col-sm-6 ">
+                            <label for="gdate">Guarantee Start Date</label>
+                            <input type="text" class="form-control" id="gdate">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+</div> -->

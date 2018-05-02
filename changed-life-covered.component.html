@@ -1,0 +1,62 @@
+<ngb-accordion class="ngbasic-accordion ngsecondary-accordion">
+    <ngb-panel>
+        <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+                <i class="icon icon-plus addContri_icon"></i><span>Add Contribution Protection</span>
+            <!-- <span class="basic-accordion-title-arrow"></span> -->
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="row">  
+            <div class="col-sm-12 row changed_life_block">
+                  <span class="changed_life_head">Select a Life Covered</span>
+                  <div class="hidden"> <!-- will display when party will be added -->
+                        <div class="bubble"><app-party-bubble initials="JD" name="John Doe"></app-party-bubble></div>
+                        <span class="edit">
+                            <i class="icon icon-edit"></i>
+                        </span>
+                        <label><h4>EDIT</h4></label>
+                  </div>
+                  <span class="add">
+                        <i class="icon icon-plus"></i>
+                      </span>
+                      <span><p class="feature">Add</p></span>
+            </div>
+            </div>
+            <div class="row toggle_main_content">
+                <div class="form-group col-sm-6">
+                    <div class="ui-toggle">   
+                         <input type="checkbox" id="changed_life_a" class="cbx hidden" />
+                         <label for="changed_life_a" class="lbl toggle_label"><span class="toggle-options">YN</span></label>
+                         <label for="toggleId" class="toggle_content">Death</label>
+                         
+                     </div>
+                   </div>
+
+                   <div class="form-group col-sm-6">
+                      <div class="ui-toggle">                                                  
+                           <input type="checkbox" id="changed_life_b" class="cbx hidden" />
+                           <label for="changed_life_b" class="lbl toggle_label"><span class="toggle-options">YN</span></label>
+                           <label for="toggleId" class="toggle_content">Disability</label>
+                      </div>
+                    </div>
+
+                   <div class="form-group col-sm-6">
+                        <div class="ui-toggle">   
+                             <input type="checkbox" id="changed_life_c" class="cbx hidden" />
+                             <label for="changed_life_c" class="lbl toggle_label"><span class="toggle-options">YN</span></label>
+                             <label for="toggleId" class="toggle_content">Functional Impairment</label>
+                        </div>
+                   </div>
+
+                   <div class="form-group col-sm-6">
+                          <div class="ui-toggle">   
+                               <input type="checkbox" id="changed_life_d" class="cbx hidden" />
+                               <label for="changed_life_d" class="lbl toggle_label"><span class="toggle-options">YN</span></label>
+                               <label for="toggleId" class="toggle_content">Retrechment</label>
+                          </div>
+                   </div>
+          </div>
+         </ng-template>
+        </ngb-panel>
+        </ngb-accordion>

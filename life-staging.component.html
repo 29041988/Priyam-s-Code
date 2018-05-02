@@ -1,0 +1,73 @@
+<p>Available funds for lifestaging</p>
+<div class="table-responsive">
+                  <table class="table lifestaging-table">
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Accumulation Phase Fund (High Risk Funds)</th>
+                          <th scope="col">Conservation Phase Fund (Low Risk Funds)</th>
+                          <th scope="col">Lifestaging Investment Option</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let tdata of lifestagingdata">
+                          <td>
+                            <div class="form-group checkbox">
+                                <input class="form-control" type="checkbox" id="{{tdata.fundid}}">
+                                <label class="check-label" for="{{tdata.fundid}}"></label> 
+                             </div>
+                            </td>
+                            <td>
+                            <div class="row">
+                              <div class="col-sm-10">
+                                
+                                    {{tdata.hrfname}}
+                               
+                              </div>
+                              <div class="col-sm-2">
+                                
+                                  <a href="{{tdata.hrlink}}" download class="download-link">
+                                      <i class="icon icon-download"></i>
+                                  </a>
+                                
+
+                              </div>
+
+                            </div>
+                          </td>
+                          <td>
+                              <div class="row">
+                                <div class="col-sm-10">
+                                  
+                                      {{tdata.lrfname}}
+                                 
+                                </div>
+                                <div class="col-sm-2">
+                                  
+                                    <a href="{{tdata.lrlink}}" download class="download-link">
+                                        <i class="icon icon-download"></i>
+                                    </a>
+                                  
+  
+                                </div>
+  
+                              </div>
+                            </td>
+
+
+
+                            
+                   <!-- <td>
+                  {{tdata.lrfname}}
+                  <a href="{{tdata.lrlink}}" download class="download-link">
+                    <i class="icon icon-download"></i>
+                </a>
+                </td> -->
+                          <td>{{tdata.invopt}}</td>
+                        </tr>
+                        
+                          
+                      </tbody>
+                    </table>
+                  </div>
+<app-fund-allocation></app-fund-allocation>

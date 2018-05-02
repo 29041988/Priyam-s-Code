@@ -1,0 +1,490 @@
+<form #retirementAnnuityForm="ngForm" class="form-horizontal">
+<ngb-accordion class="ngbasic-accordion" >
+
+    <ngb-panel *ngFor="let firstacc of retannData; let i = index">
+      
+        <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+            <span>{{firstacc.accordion}}</span>
+            <span class="basic-accordion-title-arrow"></span>
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div ngModelGroup="{{firstacc.key}}">
+          <div class="content_header">
+            <p class="feature" value="">ONGOING ADVICE FEES</p>            
+            <span>
+              <div class="ui-segmented-controls pull-right">                    
+                <input type="radio" #per name="ret_annu" value="percentage" [(ngModel)]="commisionUnit" id="ra_per" checked >
+                <label for="ra_per">%</label>
+                <input type="radio" #rand name="ret_annu" value="Rand" id="ra_R" [(ngModel)]="commisionUnit" >
+                <label for="ra_R">R</label>
+              </div>
+            </span>
+          </div>
+          
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                  
+                <div class="row">
+                  <label class="form-label col-sm-4">Ongoing Advice Fee:</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                    
+                    <app-input-box name="feedata" [inputdata]="firstacc.feedata" class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                   
+                    <app-input-box name="commissiondata" [inputdata]="firstacc.commissiondata"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+                  
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>                                
+              </div>
+            </div>
+            </div>
+            </ng-template>
+            </ngb-panel>
+</ngb-accordion>
+</form>
+
+ <form #regularcontributionForm="ngForm" class="form-horizontal">
+    <ngb-accordion class="ngbasic-accordion" >
+    
+        <ngb-panel *ngFor="let secacc of regcontData; let i = index">
+            
+         <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+            <span>{{secacc.accordion}}</span>
+            <span class="basic-accordion-title-arrow"></span>
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div ngModelGroup="{{secacc.key}}"> 
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                  
+                <div class="row">
+                   <label class="form-label col-sm-4">Upfront Commision</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                  
+                  <app-input-box name="amount" [inputdata]="secacc.feedata"  class="aftextbox" ngModel></app-input-box>
+                  <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>  
+                </div>
+                <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                  </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                  
+                    <app-input-box name="commission" [inputdata]="secacc.commissiondata"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>
+                </div> 
+              </div>
+            
+            
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                <div class="row">
+                  <label class="form-label col-sm-4">Upfront Primary Commision</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                  
+                    <app-input-box name="amount2" [inputdata]="secacc.feedata1"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                   
+                    <app-input-box name="commission2" [inputdata]="secacc.commissiondata1"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>                                
+              </div>
+            </div>
+          
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                <div class="row">
+                  <label class="form-label col-sm-4">As and when commision</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                    
+                    <app-input-box name="feedata2" [inputdata]="secacc.feedata2"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                 
+                    <app-input-box name="commissiondata2" [inputdata]="secacc.commissiondata2"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>                                
+              </div>
+            </div>
+            
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                <div class="row">
+                  <label class="form-label col-sm-4">As and when Advice Fee</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                   
+                    <app-input-box name="feedata3" [inputdata]="secacc.feedata3"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                   
+                    <app-input-box name="commissiondata3" [inputdata]="secacc.commissiondata3"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>                                
+              </div>
+            </div>
+          </div>
+        </ng-template> 
+      </ngb-panel>
+    </ngb-accordion>
+    </form>
+        
+         
+ <form #lumpsumcontributionForm="ngForm" class="form-horizontal">
+    <ngb-accordion class="ngbasic-accordion" >
+    
+        <ngb-panel *ngFor="let thirdacc of lumpcontData; let i = index">
+    
+        <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+            <span>{{thirdacc.accordion}}</span>
+            <span class="basic-accordion-title-arrow"></span>
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div ngModelGroup="{{thirdacc.key}}"> 
+            
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                  
+                <div class="row">
+                  <label class="form-label col-sm-4">As and when commision</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                    
+                    <app-input-box name="feedata" [inputdata]="thirdacc.feedata"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                    
+                    <app-input-box name="commissiondata" [inputdata]="thirdacc.commissiondata"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+                  </div>
+                                               
+              </div>
+            </div>
+            
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                <div class="row">
+                  <label class="form-label col-sm-4">As and when Advice Fee</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                  
+                    <app-input-box name="feedata1" [inputdata]="thirdacc.feedata1"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                  
+                    <app-input-box name="commissiondata1" [inputdata]="thirdacc.commissiondata1"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>                                
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      
+    </ngb-panel>
+  </ngb-accordion>
+  </form>
+
+
+  
+ <form #transferForm="ngForm" class="form-horizontal">
+    <ngb-accordion class="ngbasic-accordion" >
+    
+        <ngb-panel *ngFor="let fourthacc of transferData; let i = index">
+    
+        <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+            <span>{{fourthacc.accordion}}</span>
+            <span class="basic-accordion-title-arrow"></span>
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div ngModelGroup="{{fourthacc.key}}"> 
+            
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                  
+                <div class="row">
+                  <label class="form-label col-sm-4">As and when commision</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                    
+                    <app-input-box name="feedata" [inputdata]="fourthacc.feedata"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                    
+                    <app-input-box name="commissiondata" [inputdata]="fourthacc.commissiondata"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+                  </div>
+                                               
+              </div>
+            </div>
+            
+            <div class="row center">
+              <div class="form-group col-sm-12">
+                <div class="row">
+                  <label class="form-label col-sm-4">As and when Advice Fee</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                  
+                    <app-input-box name="feedata1" [inputdata]="fourthacc.feedata1"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox1">Selectable Range 0% -&lt;xx&gt;%</span>
+                  </div>
+                  <div class="col-sm-4">
+                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R738 713.46</span>    
+                    </div>
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                  
+                    <app-input-box name="commissiondata1" [inputdata]="fourthacc.commissiondata1"  class="randtextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+
+                </div>                                
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      
+    </ngb-panel>
+  </ngb-accordion>
+  </form>
+
+
+<form #contributionprotectionForm="ngForm" class="form-horizontal">
+    <ngb-accordion class="ngbasic-accordion" >
+   <ngb-panel *ngFor="let fifthacc of contprotecData; let i = index">
+        <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+            <span>{{fifthacc.accordion}}</span>
+            <span class="basic-accordion-title-arrow"></span>
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div ngModelGroup="{{fifthacc.key}}"> 
+          
+              <div class="row center">
+                  <div class="form-group col-sm-12">
+                    <div class="row">
+                        <label class="form-label col-sm-4">Commission Scaling</label>
+
+                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                      <span class="text-upper-textbox">Set the commission scale</span>
+                    
+                      <app-input-box name="feedata" [inputdata]="fifthacc.feedata"  class="aftextbox" ngModel></app-input-box>
+                    
+                  </div>
+
+                  <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                    
+                      <app-input-box name="commissiondata" [inputdata]="fifthacc.commissiondata"  class="aftextbox" ngModel></app-input-box>
+                    <span class="text-upper-textbox-rand1">maximum of R xxx.xx</span>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R738 713.46</span>    
+                  </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          
+        
+                          <div class="row center">
+                              <div class="form-group col-sm-12">
+                                <div class="row">
+                                  <label class="form-label col-sm-4">Full upfront commission</label>
+                
+                                  <div *ngIf="commisionUnit=='percentage'" class="col-sm-4 inline">
+                                    
+                                      <app-input-box name="feedata1" [inputdata]="fifthacc.feedata1"  class="aftextbox" ngModel></app-input-box>
+                                    <span class="text-upper-textbox">Selectable Range 0% -&lt;xx&gt;%</span>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <span *ngIf="commisionUnit=='percentage'" class="percentage-currency">R4970.00</span>    
+                                    </div>
+                                    <div *ngIf="commisionUnit=='Rand'" class="col-sm-4 inline">
+                    
+                                        <app-input-box name="commissiondata1" [inputdata]="fifthacc.commissiondata1"  class="aftextbox1" ngModel></app-input-box>
+                                      <span class="text-upper-textbox-rand2">maximum of R xxx.xx</span>
+                                    </div>
+                
+                                  <div class="col-sm-4">
+                                    <span *ngIf="commisionUnit=='Rand'" class="rand-currency text-right-rand">R4970.00</span>    
+                                  </div>
+                
+                                </div>                                
+                              </div>
+                            </div>
+                            
+                            
+                           
+                            
+                             
+                            <ngb-accordion class="ngsecondary-accordion">
+                                <ngb-panel>
+                                    <ng-template ngbPanelTitle >
+                                        <h4 class="acc_header ngbasic-accordion-title">
+                                            <button type="button" class="vbbutton" data-toggle="collapse" data-target="#viewbreakdown1">
+                                          
+                                                {{fifthacc.accordion1}}</button>
+                                                </h4>
+                                                </ng-template>
+                                                <ng-template ngbPanelContent>
+                                                    <div ngModelGroup="{{fifthacc.key}}"> 
+                                                    
+                                                    <div class="breakdown-body collapse" id="viewbreakdown1" [ngbCollapse]="isCollapsed">
+                                                        <div class="breakdown-item row-dotted clearfix">
+                                                          <div class="row vbtext">
+                                                          <div class="col-sm-10">Primary Upfront Commission for the Benefit</div>
+                                                          <div class="col-sm-2">R238.46</div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="breakdown-item row-dotted clearfix">
+                                                            <div class="row vbtext">
+                                                                <div class="col-sm-10">Secondary Upfront Commission for the Benefit</div>
+                                                                <div class="col-sm-2">R100.46</div>
+                                                              </div>
+                                                        </div>
+                                                      </div>
+                                                      </div>
+                                                      </ng-template>
+                                                      </ngb-panel>
+                                                      </ngb-accordion>
+                                                      
+            <div ngModelGroup="{{fifthacc.key}}">                                  
+              <div class="row center">
+                  <div class="form-group col-sm-12">
+                      <div class="commission-cal row p-rl-100">
+                          <h6>Full as and when commission</h6>
+                          
+                          <div class="form-group col-sm-10">
+                            <label class="text-muted">Commission</label>
+                            <p class="form-control-static commission-value">R100 p.m.</p>
+                          </div>
+                          <div class="form-group col-sm-2 col-sm-offset-4 selectterm">
+                            
+                            <app-dropdown name="termdata" [inputdata]="fifthacc.selecttermdata" ngModel></app-dropdown>
+                          </div>
+                        
+                        </div>
+                        <div class="commission-cal row p-rl-100">
+                          <h6>As and when commission with a percentage payable upfront</h6>
+                          <div class="form-group col-sm-10">
+                            <label class="text-muted">Immediate commission</label>
+                            <p class="form-control-static commission-value">R100</p>
+                          </div>
+                          <div class="form-group col-sm-2 col-sm-offset-4">
+                            <label class="text-right">AAW Commission</label>
+                            <p class="form-control-static text-right-aaw">R200 p.m.</p>
+                          </div>
+                          <div class="form-group col-sm-9">
+                            <label class="text-muted">Commission scaling for upfront</label>
+                            <p class="form-control-static commission-value">Payment:</p>
+                          </div>
+                          <div class="form-group form-input col-sm-3 col-sm-offset-4">
+                            <label class="text-right">Set the commission scale</label>
+                            
+                            <app-input-box name="feedatasub" [inputdata]="fifthacc.feedatasub" class="text-right-dd" ngModel></app-input-box>
+                          </div>
+                        </div>
+        
+                    </div>
+                    </div>
+                 </div>
+                 </ng-template>
+                 </ngb-panel>  
+              </ngb-accordion>
+                    </form> 
+
+  
+  
+

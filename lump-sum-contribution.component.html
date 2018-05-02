@@ -1,0 +1,34 @@
+<ngb-accordion class="ngbasic-accordion ngsecondary-accordion">
+    <ngb-panel>
+        <ng-template ngbPanelTitle >
+        <h4 class="acc_header ngbasic-accordion-title">
+            <span>Lump Sum Contribution</span>
+            <span class="basic-accordion-title-arrow"></span>
+        </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+           
+            <form #lumpsumform="ngForm">
+                <div class="row"> 
+                <div class="col-sm-6">
+                        <app-input-box name="abc" [inputdata]="amountdata" ngModel></app-input-box>
+                </div>
+
+                <div class="col-sm-6">
+                        <app-dropdown name="def"[inputdata]="methodofpaymentdata" ngModel></app-dropdown>
+              </div>
+              </div>
+
+              <div class="row">
+              <div class="form-group  form-group--required col-sm-6">
+                <label for="dob">Collection Date</label>
+                <input id="dob"  class="form-control" data-date-format="mm/dd/yyyy" placeholder="01/01/1999"required>
+                <p class="error">Error Message</p>
+              </div>
+            </div>
+              </form>
+           
+          </ng-template>
+          </ngb-panel>
+          </ngb-accordion>
+

@@ -1,0 +1,176 @@
+<ngb-accordion class="ngbasic-accordion">
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <h4 class="acc_header ngbasic-accordion-title">
+        <span>Retirement Annuity Savings Plan</span>
+        <span class="basic-accordion-title-arrow"></span>
+      </h4>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="content-sapcing" *ngFor="let data of products;">
+        <!-- <div class="replace-body"> -->
+        <div class="replace-inner-underline">
+          <p class="feature" value="">{{data.text}}</p>
+        </div>
+
+        <!-- 1st Row starts -->
+        <div class="row replace-inner-underline" *ngFor="let questiondata of data.description;">
+          <br>
+            <div class="col-sm-1">
+            
+                <span class="replace-questiontag">Q<span class="dot">.</span></span>
+           </div>
+          <div class="col-sm-10 shift_questiondata">
+              
+            <div class="replace-inner-desc">
+              <p class="replace-inner-desc text_style" value="">{{questiondata.question}}</p>
+              <p class="replace-inner-desc subquestion" value="">{{questiondata.subquestion}}</p>
+            </div>
+            
+
+          </div>
+          <div class="col-sm-1 toggle_text">
+            <!-- toggler starts -->
+            <section id="toggles">
+              <div class="ui-toggle lifestaging-toggle first_toggle_shift">
+                <label for="toggleId"></label>
+                <input type="checkbox" #lifestaging id="lifestaging" (change)="0" class="cbx hidden" />
+                <label for="lifestaging" class="lbl lifestaging-lbl">
+                  <span class="toggle-options">YN</span>
+                </label>
+              </div>
+            </section>
+            <!-- toggler ends -->
+          </div>
+        </div>
+        <!-- 1st Row ends -->
+        <!-- 2nd Row starts -->
+        
+        <!-- 2nd row ends -->
+
+        <!-- <p class="replace-inner-desc grey" value="">{{data.description1}}</p>
+            <br>
+            <br>
+          </div> -->
+        <!-- today starts -->
+        <!-- <div class="replace-inner-underline"> -->
+        <!-- <div class="row ">
+            <div class="col-sm-11">
+              <p> <a class="grey"> Q.</a>{{data.description}} </p>
+            </div>
+            <div class="col-sm-1">
+              <input type="checkbox" #lifestaging id="lifestaging" (change)="0" class="cbx hidden" />
+              <label for="lifestaging" class="lbl lifestaging-lbl shift">
+                <span class="toggle-options">YN</span>
+              </label>
+            </div>
+        
+          
+            <div class="col-sm-11">
+              <p class="grey"> {{data.description1}} </p>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          
+
+
+          
+            <div class="col-sm-11">
+              <p>  <a class="grey"> Q.</a>{{data.description2}} </p>
+            </div>
+            <div class="col-sm-1">
+              <input type="checkbox" #lifestaging id="lifestaging1" (change)="0" class="cbx hidden" />
+              <label for="lifestaging1" class="lbl lifestaging-lbl shift">
+                <span class="toggle-options">YN</span>
+              </label>
+            </div>
+      
+          
+            <div class="col-sm-11">
+              <p class="grey"> {{data.description3}} </p>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </div> -->
+
+        <!-- today ends -->
+
+
+
+        <!-- <div class="replace-inner-desc">
+            <p class="replace-inner-desc" value="">{{data.description2}}
+              <input type="checkbox" #lifestaging id="lifestaging1" (change)="0" class="cbx hidden" />
+              <label for="lifestaging1" class="lbl lifestaging-lbl shift1">
+                <span class="toggle-options">YN</span>
+              </label>
+            </p>
+            <p class="replace-inner-desc grey" value="">{{data.description3}}</p>
+
+            <br>
+            <br>
+          </div> -->
+        <div class="replace-inner-radio-button">
+          <!-- <div class="radio-container"> -->
+          <!-- <div class="replace-inner-radio-button-adjust"><input type="radio" name="yesno" value="yes"> Yes</div>
+                      <div><input type="radio" name="yesno" value="no"> No</div> -->
+          <!-- <input type="radio" name="yesno" value="Yes" (change)="replacementBtn=true;" id="replace-yes"> <label for="replace-yes">Yes</label><br>
+                      <input type="radio" name="yesno" value="No" (change)="replacementBtn=false;" id="replace-no"> <label for="replace-no">No</label>
+                  </div>                        -->
+        </div>
+        <!-- <div *ngIf="replacementBtn">
+            <div class="replace-inner-underline">
+              <p class="feature" value="">Replacing any investment or insurance policy for this product may be to your disadvantage</p>
+            </div>
+            <div class="replace-inner-desc"> -->
+        <!-- <p class="replace-inner-desc" value="">{{data.description}}</p> -->
+        <!-- <ul>
+                <li>
+                  <p class="replace-inner-desc">You may pay some charges and fees twice e.g. initial charges on the existing financial product and once
+                    again on the new product.</p>
+                </li>
+                <br>
+                <li>
+                  <p class="replace-inner-desc">Your new product may not have the same investment performance guarantees as the existing product.</p>
+                </li>
+                <br>
+                <li>
+                  <p class="replace-inner-desc">If you are cancelling a risk cover product to take out this product, you might not qualify for the same
+                    risk cover when you want to take it out again.</p>
+                </li>
+                <br>
+                <li>
+                  <p class="replace-inner-desc">The surrender value or paid-up value of the replaced product may be as low as 65% of the value before the
+                    change and could be even less than premiums paid in since unrecovered initial expenses may first be deducted.
+                    Check what charges you will be paying if you end the existing product and see whether the advantages
+                    of the new product will make up for any such charges.</p>
+                </li>
+                <br>
+                <li>
+                  <p class="replace-inner-desc">The investment risk under the new product may be higher. Remember that the past performance of a found
+                    or asset manager of a fund is not necessarily an indication of future performance.</p>
+                </li>
+                <br>
+              </ul>
+            </div>
+            <div class="replace-inner-radio-button">
+              <div class="radio-container"> -->
+        <!-- <div class="replace-inner-radio-button-adjust"><input type="radio" name="yesno" value="yes"> Yes</div>
+                        <div><input type="radio" name="yesno" value="no"> No</div> -->
+        <!-- <input type="radio" name="yesno" value="Yes" id="accept-yes">
+                <label for="accept-yes">
+                  <b>I understand and accept the above</b>
+                </label>
+                <br>
+                <br>
+                <input type="radio" name="yesno" value="No" id="accept-no">
+                <label for="accept-no">
+                  <b>I do not understand and accept the above</b>
+                </label>
+              </div>
+            </div>
+          </div> -->
+      </div>
+
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

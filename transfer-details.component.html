@@ -1,0 +1,39 @@
+<ngb-accordion class="ngbasic-accordion ngsecondary-accordion">
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <h4 class="acc_header ngbasic-accordion-title">
+        <span>Transfer Details</span>
+        <span class="basic-accordion-title-arrow"></span>
+      </h4>
+    </ng-template>
+    <ng-template ngbPanelContent>
+        <form #transferForm="ngForm">          
+          <div class="row">
+            <div class="col-sm-6">
+              <app-input-box [inputdata]="providerdata" ngModel></app-input-box>
+            </div>
+            <div class="col-sm-6">
+              <app-input-box [inputdata]="amountdata" ngModel></app-input-box>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <app-dropdown [inputdata]="productdata" ngModel></app-dropdown>
+            </div>
+            <div class="col-sm-6">
+              <app-dropdown [inputdata]="transferdata" ngModel></app-dropdown>
+            </div>
+          </div>
+          <div class="col-sm-12 content-para-styling">
+            <p>Do you want to add multiple transfer sources? If
+              <span class="text-decoration-bold">Yes</span>, press
+              <span class="text-decoration-bold">Add another transfer.</span>
+              <span class="add-fund-icon">
+                <i class="icon icon-plus"></i>
+              </span>
+            </p>
+          </div>
+        </form>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

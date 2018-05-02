@@ -1,0 +1,308 @@
+<form #regularContributionSavingsForm="ngForm" class="form-horizontal">
+        <ngb-accordion [closeOthers]="true" class="ngbasic-accordion">
+            
+            <ngb-panel *ngFor="let firstacc of retannData; let i = index">
+                <ng-template ngbPanelTitle>
+                    <h4 class="acc_header ngbasic-accordion-title">
+                        <span>{{firstacc.accordion1}}</span>
+                        <span class="basic-accordion-title-arrow"></span>
+                    </h4>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                        
+                    <div class="content-adjust">
+                            <ngb-accordion [closeOthers]="true" class="ngsecondary-accordion">
+                                    <ngb-panel>
+                                            <form #regularcontributionform="ngForm">
+                                                    <div ngModelGroup="{{firstacc.key}}">
+                                        <ng-template ngbPanelTitle >
+                                            
+                                        <h4 class="acc_header ngbasic-accordion-title">
+                                            <span>{{firstacc.regcontdata.subaccordion1}}</span>
+                                            <span class="basic-accordion-title-arrow"></span>
+                                        </h4>
+                                    
+                                        </ng-template>
+                                        <ng-template ngbPanelContent>
+                                                
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                            <app-input-box name="regamount" [inputdata]= "firstacc.regcontdata.regamountdata" ngModel></app-input-box>
+                                                        </div>
+                                                    <div class="col-sm-6">
+                                                        <app-dropdown name="regfreq" [inputdata]="firstacc.regcontdata.regfreqdata" ngModel></app-dropdown>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <app-input-box name="regyr" [inputdata]="firstacc.regcontdata.regyrdata" ngModel></app-input-box>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <app-dropdown name="methodpay" [inputdata]="firstacc.regcontdata.methodpaydata" ngModel></app-dropdown>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <app-dropdown name="date" [inputdata]="firstacc.regcontdata.datedata" ngModel></app-dropdown>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <app-dropdown name="strtmonth" [inputdata]="firstacc.regcontdata.strtmonthdata" ngModel></app-dropdown>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-sm-12 content-para-styling">
+                                                    <p>Yearly Contribution Increase</p>
+                                                </div>
+                                                <div class="content-block-styling">
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group form-input ">
+                                                            <div class="replace-inner-radio-button">
+                                                                <div class="radio-container">
+                                                                    <input type="radio" name="yearlyContributionIncrease" value="inflation" id="inflation">
+                                                                    <label for="inflation">Inflation</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <app-input-box name="inflation" [inputdata]="firstacc.regcontdata.inflationdata" ngModel></app-input-box>
+                                                        </div>
+                
+                                                        <div class="col-sm-4 form-group form-input ">
+                                                            <div class="replace-inner-radio-button">
+                                                                <div class="radio-container">
+                                                                    <input type="radio" name="yearlyContributionIncrease" value="fixedYearlyIncrease" id="fixedYearlyIncrease">
+                                                                    <label for="fixedYearlyIncrease">Fixed Yearly Increase</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <app-input-box name="fixincrease" [inputdata]="firstacc.regcontdata.fixincreasedata" ngModel></app-input-box>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group form-input ">
+                                                            <div class="replace-inner-radio-button">
+                                                                <div class="radio-container">
+                                                                    <input type="radio" name="yearlyContributionIncrease" value="educationInflation" id="educationInflation">
+                                                                    <label for="educationInflation">Education Inflation</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <app-input-box name="eduinflation" [inputdata]="firstacc.regcontdata.eduinflationdata" ngModel></app-input-box>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group form-input ">
+                                                            <div class="replace-inner-radio-button">
+                                                                <div class="radio-container">
+                                                                    <input type="radio" name="yearlyContributionIncrease" value="salaryInflation" id="salaryInflation">
+                                                                    <label for="salaryInflation">Salary Inflation</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <app-input-box name="salinflation" [inputdata]="firstacc.regcontdata.salinflationdata" ngModel></app-input-box>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-sm-offset-2 form-group form-input ">
+                                                            <div class="replace-inner-radio-button">
+                                                                <div class="radio-container">
+                                                                    <input type="radio" name="yearlyContributionIncrease" value="increaseWithAnnualLimit" id="increaseWithAnnualLimit">
+                                                                    <label for="increaseWithAnnualLimit"> Increase with Annual Limit(Tax Free Allowance)</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                
+                
+                                                        <div class="col-sm-6 form-group form-input ">
+                                                            <div class="replace-inner-radio-button">
+                                                                <div class="radio-container">
+                                                                    <input type="radio" name="yearlyContributionIncrease" value="noIncrease" id="noIncrease">
+                                                                    <label for="noIncrease"> No Increase</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 content-note-styling">
+                                                    <p>Increase Date</p>
+                                                </div>
+                
+                                                <p>Your yearly contribution increase will take place on &lt;Anniversary date&gt; &lt;Deduction
+                                                    date March next year&gt;&lt;1 July (year tbc) &gt;.</p>
+                                                <div class="acc-adjust">
+                                                    <app-changed-life-covered></app-changed-life-covered>
+                                                </div>
+                                                
+                                                </ng-template>
+                                                </div>
+                                                </form>
+                                                </ngb-panel>
+                                                
+                                                </ngb-accordion>
+                                                <app-lump-sum-contribution></app-lump-sum-contribution>
+                                                <app-transfer-details></app-transfer-details>
+                                            </div>
+                                        </ng-template>
+                                        </ngb-panel>
+                                        
+                                    
+                                    
+                                </ngb-accordion>
+                                </form>
+             
+                                <form #regularContributionInvestmentForm="ngForm" class="form-horizontal">
+                                <ngb-accordion [closeOthers]="true" class="ngbasic-accordion">
+            
+                                        <ngb-panel *ngFor="let firstacc of retannData; let i = index">
+                                            <ng-template ngbPanelTitle>
+                                                <h4 class="acc_header ngbasic-accordion-title">
+                                                    <span>{{firstacc.accordion2}}</span>
+                                                    <span class="basic-accordion-title-arrow"></span>
+                                                </h4>
+                                            </ng-template>
+                                            <ng-template ngbPanelContent>
+                                                    
+                                                <div class="content-adjust">
+                                                        <ngb-accordion [closeOthers]="true" class="ngsecondary-accordion">
+                                                                <ngb-panel>
+                                                                        <form #regularcontributionform="ngForm">
+                                                                                <div ngModelGroup="{{firstacc.key}}">
+                                                                    <ng-template ngbPanelTitle >
+                                                                        
+                                                                    <h4 class="acc_header ngbasic-accordion-title">
+                                                                        <span>{{firstacc.regcontdata.subaccordion1}}</span>
+                                                                        <span class="basic-accordion-title-arrow"></span>
+                                                                    </h4>
+                                                                
+                                                                    </ng-template>
+                                                                    <ng-template ngbPanelContent>
+                                                                            
+                                                                            <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                        <app-input-box name="regamount" [inputdata]= "firstacc.regcontdata.regamountdata" ngModel></app-input-box>
+                                                                                    </div>
+                                                                                <div class="col-sm-6">
+                                                                                    <app-dropdown name="regfreq" [inputdata]="firstacc.regcontdata.regfreqdata" ngModel></app-dropdown>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                    <app-input-box name="regyr" [inputdata]="firstacc.regcontdata.regyrdata" ngModel></app-input-box>
+                                                                                </div>
+                                                                                <div class="col-sm-6">
+                                                                                    <app-dropdown name="methodpay" [inputdata]="firstacc.regcontdata.methodpaydata" ngModel></app-dropdown>
+                                                                                </div>
+                                                                            </div>
+                                            
+                                                                            <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                    <app-dropdown name="date" [inputdata]="firstacc.regcontdata.datedata" ngModel></app-dropdown>
+                                                                                </div>
+                                                                                <div class="col-sm-6">
+                                                                                    <app-dropdown name="strtmonth" [inputdata]="firstacc.regcontdata.strtmonthdata" ngModel></app-dropdown>
+                                                                                </div>
+                                                                            </div>
+                                            
+                                                                            <div class="col-sm-12 content-para-styling">
+                                                                                <p>Yearly Contribution Increase</p>
+                                                                            </div>
+                                                                            <div class="content-block-styling">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-4 form-group form-input ">
+                                                                                        <div class="replace-inner-radio-button">
+                                                                                            <div class="radio-container">
+                                                                                                <input type="radio" name="yearlyContributionIncrease" value="inflation" id="inflation">
+                                                                                                <label for="inflation">Inflation</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2">
+                                                                                        <app-input-box name="inflation" [inputdata]="firstacc.regcontdata.inflationdata" ngModel></app-input-box>
+                                                                                    </div>
+                                            
+                                                                                    <div class="col-sm-4 form-group form-input ">
+                                                                                        <div class="replace-inner-radio-button">
+                                                                                            <div class="radio-container">
+                                                                                                <input type="radio" name="yearlyContributionIncrease" value="fixedYearlyIncrease" id="fixedYearlyIncrease">
+                                                                                                <label for="fixedYearlyIncrease">Fixed Yearly Increase</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2">
+                                                                                        <app-input-box name="fixincrease" [inputdata]="firstacc.regcontdata.fixincreasedata" ngModel></app-input-box>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-4 form-group form-input ">
+                                                                                        <div class="replace-inner-radio-button">
+                                                                                            <div class="radio-container">
+                                                                                                <input type="radio" name="yearlyContributionIncrease" value="educationInflation" id="educationInflation">
+                                                                                                <label for="educationInflation">Education Inflation</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2">
+                                                                                        <app-input-box name="eduinflation" [inputdata]="firstacc.regcontdata.eduinflationdata" ngModel></app-input-box>
+                                                                                    </div>
+                                                                                    <div class="col-sm-4 form-group form-input ">
+                                                                                        <div class="replace-inner-radio-button">
+                                                                                            <div class="radio-container">
+                                                                                                <input type="radio" name="yearlyContributionIncrease" value="salaryInflation" id="salaryInflation">
+                                                                                                <label for="salaryInflation">Salary Inflation</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2">
+                                                                                        <app-input-box name="salinflation" [inputdata]="firstacc.regcontdata.salinflationdata" ngModel></app-input-box>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-6 col-sm-offset-2 form-group form-input ">
+                                                                                        <div class="replace-inner-radio-button">
+                                                                                            <div class="radio-container">
+                                                                                                <input type="radio" name="yearlyContributionIncrease" value="increaseWithAnnualLimit" id="increaseWithAnnualLimit">
+                                                                                                <label for="increaseWithAnnualLimit"> Increase with Annual Limit(Tax Free Allowance)</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                            
+                                            
+                                                                                    <div class="col-sm-6 form-group form-input ">
+                                                                                        <div class="replace-inner-radio-button">
+                                                                                            <div class="radio-container">
+                                                                                                <input type="radio" name="yearlyContributionIncrease" value="noIncrease" id="noIncrease">
+                                                                                                <label for="noIncrease"> No Increase</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-12 content-note-styling">
+                                                                                <p>Increase Date</p>
+                                                                            </div>
+                                            
+                                                                            <p>Your yearly contribution increase will take place on &lt;Anniversary date&gt; &lt;Deduction
+                                                                                date March next year&gt;&lt;1 July (year tbc) &gt;.</p>
+                                                                            <div class="acc-adjust">
+                                                                                <app-changed-life-covered></app-changed-life-covered>
+                                                                            </div>
+                                                                            
+                                                                            </ng-template>
+                                                                            </div>
+                                                                            </form>
+                                                                            </ngb-panel>
+                                                                            
+                                                                            </ngb-accordion>
+                                                                            <app-lump-sum-contribution></app-lump-sum-contribution>
+                                                                            <app-transfer-details></app-transfer-details>
+                                                                        </div>
+                                                                    </ng-template>
+                                                                    </ngb-panel>
+                                                                    
+                                                                
+                                                                
+                                                            </ngb-accordion>
+    </form>
+        

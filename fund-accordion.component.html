@@ -1,0 +1,68 @@
+<!-- <div class="row">
+    <div class="basic-accordion col-sm-12" id="fundaccordion">
+        <div class="basic-accordion-container">
+            <h3 data-toggle="collapse" data-parent="#fundaccordion" data-target="#fundcollapse1" class="basic-accordion-title">
+                
+                Retirement Annuity Savings Plan
+                <span class="basic-accordion-title-arrow"></span>
+            </h3>
+            <div id="fundcollapse1" class="collapse in basic-accordion-content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <section id="toggles"> 
+                              <div class="ui-toggle lifestaging-toggle">
+                <label for="toggleId">Do you want Lifestaging</label>            
+                <input type="checkbox" #lifestaging id="lifestaging" (change)="0" class="cbx hidden" />
+                <label for="lifestaging" class="lbl lifestaging-lbl"><span class="toggle-options">YN</span></label>
+            </div> 
+     
+                       
+            </section> 
+            <div *ngIf="!lifestaging.checked" class="nolifestaging-block">
+                      <app-nolifestaging></app-nolifestaging>    
+              </div>
+              <div *ngIf="lifestaging.checked" class="lifestaging-block">
+                <app-lifestaging></app-lifestaging>
+              </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+</div>
+</div> -->
+
+
+
+<ngb-accordion [closeOthers]="true" class="ngbasic-accordion" activeIds="fundAccordion">
+    <ngb-panel id="fundAccordion">
+            <ng-template ngbPanelTitle >
+                    <h4 class="acc_header ngbasic-accordion-title">
+                        <span>Retirement Annuity Savings Plan</span>
+                        <span class="basic-accordion-title-arrow"></span>
+                    </h4>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                            <div class="row">
+                                    <div class="col-sm-12">
+                                        <section id="toggles"> 
+                                              <div class="ui-toggle lifestaging-toggle">
+                                <label for="toggleId">Do you want Lifestaging</label>            
+                                <input type="checkbox" #lifestaging id="lifestaging" (change)="0" class="cbx hidden" />
+                                <label for="lifestaging" class="lbl lifestaging-lbl"><span class="toggle-options">YN</span></label>
+                            </div> 
+                     
+                                        
+                            </section> 
+                            <div *ngIf="!lifestaging.checked" class="nolifestaging-block">
+                                      <app-nolifestaging></app-nolifestaging>    
+                              </div>
+                              <div *ngIf="lifestaging.checked" class="lifestaging-block">
+                                <app-lifestaging></app-lifestaging>
+                              </div>
+                                </div>
+                            </div>
+                    </ng-template>
+    </ngb-panel>
+</ngb-accordion>

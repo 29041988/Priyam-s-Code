@@ -1,0 +1,80 @@
+<ngb-accordion [closeOthers]="true" [destroyOnHide]="false" class="ngbasic-accordion">
+    <ngb-panel *ngFor="let data of products; let i = index">
+        <ng-template ngbPanelTitle>
+            <h4 class="acc_header ngbasic-accordion-title">
+                <span>{{data.name | uppercase}}</span>
+                <span class="basic-accordion-title-arrow"></span>
+            </h4>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="row taxsaving_content">
+                <div *ngFor="let section of data.section; let sub = index" class="col-sm-6 product-box">
+                    <div class="tax-box">
+                        <div class="form-group checkbox">
+                            <input class="form-control" type="checkbox" [attr.id]="section.id" #product (change)="storePlans(product.checked, product.id)">
+                            <label class="check-label" [attr.for]="section.id">{{section.text}}</label>
+                            <a class="tax-box-anchor" target="_blank">
+                                <img src="assets/images/icons/icon-download.svg" height="42" width="42">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- accordion part 1 START -->
+                    <!-- sub content start-->
+                    <div *ngIf="product.checked">
+                        <div class="tax-box">
+                            <span>ADD/ REMOVE PRODUCT</span>
+                            <div class="tax-box-anchor">
+                                <span class="addremv-icon">
+                                    <i class="icon icon-plus"></i>
+                                    <i class="icon icon-minus"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- accordion part 1 END -->
+                        <!-- accordion part 2 START -->
+                        <div class="tax-box-selected">
+                            <div>
+                                <span>Selected Plan</span>
+                                <label class="tax-box-selected-label">
+                                    <p class="feature">{{section.text}}</p>
+                                </label>
+                                <span>
+                                    <i class="icon icon-remove addremv-icon"></i>
+                                </span>
+                            </div>
+                            <!-- part-1-start -->
+                            <div *ngIf="data.name == 'Tax Free'">
+                                <app-party-bubble initials="??"></app-party-bubble>
+                                <label class="tax-box-selected-label">Contracting Party</label>
+                            </div>
+                            <!-- part-1-end -->
+                            <!-- part-2-start -->
+                            <div *ngIf="data.name == 'Linked Investment'">
+                                <app-party-bubble initials="??"></app-party-bubble>
+                                <a class="prod-sel-anchor">Select Member</a>
+                                <span class="tax-box-selected-label">Or</span>
+                                <a class="prod-sel-anchor" (click)="selectMember=!selectMember;">Continue anonymously</a>
+                            </div>
+                            <!-- part-2-end -->
+                            <!-- part-3-start -->
+                            <div *ngIf="data.name == 'Retirement Annuity'">
+                                <app-party-bubble initials="JD" name="John Doe" showdots="true"></app-party-bubble>
+                                <span class="product-selection-close">
+                                    <i class="icon icon-remove"></i>
+                                </span>
+                            </div>
+                            <!-- part-3-end -->
+                        </div>
+                        <!-- accordion part 2 END -->
+                        <app-anon-form *ngIf="selectMember && data.name == 'Linked Investment'"></app-anon-form>
+                    </div>
+                    <!-- sub content end -->
+                </div>
+            </div>
+        </ng-template>
+    </ngb-panel>
+
+</ngb-accordion>
+
+
+<!--<button (click)="gotoquotesavings()">Go to Quote Savings</button> -->

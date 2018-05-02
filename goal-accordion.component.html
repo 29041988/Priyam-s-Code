@@ -1,0 +1,65 @@
+<form #goalForm="ngForm">
+    <ngb-accordion class="ngbasic-accordion" [closeOthers]="true" [destroyOnHide]="false">
+        <ngb-panel *ngFor="let plan of formData; let i = index">
+            <ng-template ngbPanelTitle>
+                <h4 class="acc_header ngbasic-accordion-title">
+                    <span class="goal-accordion-title-close">
+                        <i class="icon icon-remove"></i>
+                    </span>
+                    <span>{{plan.accordian}}</span>
+                    <span class="basic-accordion-title-arrow"></span>
+                </h4>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                <p>Assign Goal:</p>
+                <div ngModelGroup="{{plan.key}}">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <app-input-box name="goalname" [inputdata]="plan.goaldata" ngModel></app-input-box>
+                        </div>
+                        <div class="col-sm-6">
+                            <app-dropdown name="goaltype" [inputdata]="plan.gtypedata"  ngModel></app-dropdown>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <app-input-box name="goalamount" [inputdata]="plan.gamountdata" ngModel></app-input-box>
+                            <!-- <app-input-box name="goalamount" [inputdata]="plan.gamountdata" ngModel></app-input-box> -->
+                            <!-- <app-input-box name="goalname1" [inputdata]="plan.goaldata1" ngModel></app-input-box> -->
+
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div><label class="goalterm">Goal Term</label></div>
+                                    <app-segmented-controls name="termtype" [data]="plan.termtypedata"  ngDefaultControl ngModel></app-segmented-controls>
+                                </div>
+                                <div class="col-sm-4 term-val">
+                                    <app-input-box name="termspan" [inputdata]="plan.termdata" ngModel></app-input-box>
+                                </div>
+                                <div class="col-sm-2">
+                                    <span class="term-box"> Year(s)</span>
+
+ 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="form-group  col-sm-6">
+                            <label for="dob">Date of Birth</label>
+                            <input type="text" class="form-control" id="dob">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <app-input-box name="retage" [inputdata]="plan.retagedata" ngModel></app-input-box>
+                        </div>
+                    </div> -->
+                </div>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</form>
+{{goalForm.valid | json}} {{goalForm.value | json}}
